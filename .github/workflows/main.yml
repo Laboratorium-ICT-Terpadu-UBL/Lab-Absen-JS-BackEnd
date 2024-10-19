@@ -17,10 +17,10 @@ jobs:
         with:
           node-version: '20.16.0' # Ganti dengan versi Node.js yang sesuai
 
-      # - name: Install Dependencies
-      #   run: |
-      #     cd ./DataLab/absensi/cicdBackEnd
-      #     npm install
+      - name: Install Dependencies
+        run: |
+          cd ./Lab-Absen-JS-BackEnd/Lab-Absen-JS-BackEnd
+          npm install
 
       # - name: Run Tests
       #   run: |
