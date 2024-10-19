@@ -9,13 +9,23 @@ jobs:
   test:
     runs-on: self-hosted
     steps:
-      - name: Create Symbolic Link to Target Directory
-        run: ln -s /DataLab/absensi/cicdBackEnd $GITHUB_WORKSPACE
-        
       - name: Check Out Code
         uses: actions/checkout@v2
+
+      - name: Set Up Node.js
+        uses: actions/setup-node@v2
         with:
-          path: /DataLab/absensi/cicdBackEnd
+          node-version: '20.16.0' # Ganti dengan versi Node.js yang sesuai
+
+      # - name: Install Dependencies
+      #   run: |
+      #     cd ./DataLab/absensi/cicdBackEnd
+      #     npm install
+
+      # - name: Run Tests
+      #   run: |
+      #     cd ./DataLab/absensi/cicdBackEnd
+      #     npm test
 
       - name: Run a Simple Command
         run: echo "Hello, World!"
