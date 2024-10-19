@@ -19,7 +19,6 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          cd ./Lab-Absen-JS-BackEnd/Lab-Absen-JS-BackEnd
           npm install
 
       # - name: Run Tests
