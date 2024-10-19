@@ -1,0 +1,25 @@
+name: Simple Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - name: Check Out Code
+        uses: actions/checkout@v2
+
+      - name: Set Up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.16.0'
+
+      - name: Install Dependencies
+        run: |
+          npm install
+
+      - name: Restart the pm2
+        run: pm2 restart 1
