@@ -7,7 +7,7 @@ on:
 
 jobs:
   test:
-    runs-on: [self-hosted, BackEnd_Absen]
+    runs-on: self-hosted
     steps:
       # - name: Check Out Code
       #   uses: actions/checkout@v2
