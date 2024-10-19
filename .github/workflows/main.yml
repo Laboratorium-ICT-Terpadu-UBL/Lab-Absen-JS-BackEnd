@@ -32,4 +32,4 @@ jobs:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
           FRONT_END_ORIGINS: ${{ secrets.FRONT_END_ORIGINS }}
 
-        run: pm2 restart 1
+        run: pm2 restart 3
