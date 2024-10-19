@@ -16,5 +16,6 @@ conn.connect((err) => {
     console.log('Connected to MySQL');
 })
 
+
 export default conn
 
