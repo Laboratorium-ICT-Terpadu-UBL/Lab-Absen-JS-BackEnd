@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Pull the Fix Code 
         run: |
-          git Pull origin main
+          git pull origin main
 
       - name: Set Up Node.js
         uses: actions/setup-node@v2
