@@ -9,8 +9,13 @@ jobs:
   test:
     runs-on: self-hosted
     steps:
-      # - name: Check Out Code
-      #   uses: actions/checkout@v2
+      - name: Create Symbolic Link to Target Directory
+        run: ln -s /DataLab/absensi/cicdBackEnd $GITHUB_WORKSPACE
+        
+      - name: Check Out Code
+        uses: actions/checkout@v2
+        with:
+          path: /DataLab/absensi/cicdBackEnd
 
       - name: Run a Simple Command
         run: echo "Hello, World!"
