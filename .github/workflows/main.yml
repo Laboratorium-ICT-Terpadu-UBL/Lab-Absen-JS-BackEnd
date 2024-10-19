@@ -21,5 +21,15 @@ jobs:
         run: |
           npm install
 
-      - name: Restart the pm2
+      - name: Restart The pm2 and Start Applicaiton
+        env:
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASS: ${{ secrets.DB_PASS }}
+          DB_DATABASE: ${{ secrets.DB_DATABASE }}
+          DB_PORT: ${{ secrets.DB_PORT }}
+          PORT: ${{ secrets.PORT }}
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          FRONT_END_ORIGINS: ${{ secrets.FRONT_END_ORIGINS }}
+
         run: pm2 restart 1
