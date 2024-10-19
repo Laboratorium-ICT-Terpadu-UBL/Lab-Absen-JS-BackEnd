@@ -1,0 +1,16 @@
+name: Simple Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: [self-hosted, BackEnd_Absen]
+    steps:
+      # - name: Check Out Code
+      #   uses: actions/checkout@v2
+
+      - name: Run a Simple Command
+        run: echo "Hello, World!"
