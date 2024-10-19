@@ -1,0 +1,26 @@
+name: CI/CD Pipeline Absen Back End
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: [self-hosted, BackEnd_Absen] # Menjalankan di runner yang telah diatur
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with: 
+          path: "/DataLab/absensi/cicdBackEnd"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.16.0' # Ganti dengan versi Node.js yang sesuai
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Deploy Application
+        run: pm2 restart 0
