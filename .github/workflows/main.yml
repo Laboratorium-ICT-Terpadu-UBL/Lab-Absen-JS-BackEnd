@@ -11,8 +11,8 @@ jobs:
     steps:
       - name: Pull the Fix Code 
         run: |
-          cd Lab-Absen-JS-BackEnd/Lab-Absen-JS-BackEnd && git Pull origin main
-          
+          git Pull origin main
+
       - name: Set Up Node.js
         uses: actions/setup-node@v2
         with:
