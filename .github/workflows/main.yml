@@ -18,9 +18,9 @@ jobs:
         with:
           node-version: '20.16.0'
 
-      # - name: Install Dependencies
-      #   run: |
-      #     npm install
+      - name: Install Dependencies
+        run: |
+          npm install
 
       - name: Restart The pm2 and Start Applicaiton
         env:
@@ -33,4 +33,4 @@ jobs:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
           FRONT_END_ORIGINS: ${{ secrets.FRONT_END_ORIGINS }}
 
-        
+        run: echo "Process Completed"
