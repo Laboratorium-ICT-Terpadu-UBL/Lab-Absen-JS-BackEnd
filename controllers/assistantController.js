@@ -6,7 +6,7 @@ export const assistantPost = async (req, res) => {
     //in here when add new assistant
     const { nim, name, phone, gender, card_no, password, position } = req.body
 
-    if (!nim || !name || !phone || !gender || !card_no || !password || !position) {
+    if (!nim || !name || !phone || !gender || !position) {
         res.status(400).json({
             error: 'Bad Request: some key not appears'
         })
@@ -30,10 +30,10 @@ export const assistantPost = async (req, res) => {
     const { faculty, major } = nimConverter(nim)
     const hashedPassword = await Bhash(password)
     try {
-        await sqlQuery("INSERT INTO asisten (nim, nama, fakultas, jurusan, jenis_kelamin, no_telp, jabatan, kata_sandi, status, serial_kartu) VALUES (?,?)",
+        await sqlQuery("INSERT INTO asisten (nim, nama, fakultas, jurusan, jenis_kelamin, no_telp, jabatan, kata_sandi, status, serial_kartu) VALUES (?,?,?,?,?,?,?,?,?,?)",
             [nim, name, faculty, major, gender, phone, position, password !== "" ? hashedPassword : null, "Aktif", card_no !== "" ? card_no : null])
         res.status(200).json({
-            message: `${id} User has been added`
+            message: `${nim} User has been added`
         })
     } catch (error) {
         console.error(error);
